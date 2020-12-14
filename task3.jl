@@ -28,4 +28,5 @@ end
 function main(r::Robot)
     gotobegin!(r)
     mark_all!(r)
+    gotobegin!(r)
 end

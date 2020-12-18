@@ -52,17 +52,23 @@ function side_invert(r, side)
         return West
     end
 end
+# function gotobegin(r)
+#     while(!fl_incorner)
+#         if(fl_incorner)
+#             break
+#         else 
+#             gotoborder(r, West)
+#             go_around(r, West)
+#         end
+#         if( fl_incorner)
+#             break
+#         end
+#     end
+# end
 function gotobegin(r)
-    while(!fl_incorner)
-        if( fl_incorner)
-            break
-        else 
-            gotoborder(r, West)
-            go_around(r, West)
-            if( fl_incorner)
-                break
-            end
-        end
+    while(!((isborder(r, West)) & (isborder(r, Sud))))
+        gotoborder(r, West)
+        gotoborder(r, Sud)
     end
 end
 function gotoborder(r, side)

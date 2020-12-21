@@ -3,19 +3,19 @@ function go_around(r, side)
     counter_horisontal = 0
     counter_vertical = 0
     while(isborder(r, side))
-        move!(r, Nord) # turn_side(side)
+        move!(r, turn_side(side)) # turn_side(side)
         counter_vertical = counter_vertical + 1
     end
     move!(r, side)
-    while(isborder(r, Sud)) # invert_side(turn_side(side))
+    while(isborder(r, invert_side(turn_side(side)))) # invert_side(turn_side(side))
         move!(r, side)
         counter_horisontal = counter_horisontal + 1
     end
-    #move!(r, invert_side(turn_side(side)))
-    move!(r, Sud)
+    move!(r, invert_side(turn_side(side)))
+    # move!(r, Sud)
     c = counter_vertical
     while(c > 1)
-        move!(r, Sud) # invert_side(turn_side(side))
+        move!(r, invert_side(turn_side(side))) # invert_side(turn_side(side))
         c = c - 1
     end
     # move!(r, Nord)
@@ -32,7 +32,7 @@ function turn_side(side)
         return West
     end
     if side == Ost
-        return Nord
+        return Sud
     end
     if side == West
         return Sud
@@ -65,20 +65,19 @@ function gotoborder(r, side)
 end
 function main(r)
     gotobegin(r)
-    count = 10
-    cnt = 10
-    # while(!(isborder(r, Ost) & isborder(r, Sud)))
-    #     count = count + 1
-    #     move!(r, Ost)
-    # end
+    count = 0
+    cnt = 0
+    while(!(isborder(r, Ost) & isborder(r, Sud)))
+        count = count + 1
+        move!(r, Ost)
+    end
     max_area = 0
-    # gotobegin(r)
-    # while(!(isborder(r, West) & isborder(r, Nord)))
-    #     cnt = cnt + 1
-    #     move!(r, Nord)
-    # end
-    # print(count)
-    # print(cnt)
+    gotobegin(r)
+    count = count - 1
+    while(!(isborder(r, West) & isborder(r, Nord)))
+        cnt = cnt + 1
+        move!(r, Nord)
+    end
     gotobegin(r)
     side = Ost
     while(cnt > 0)

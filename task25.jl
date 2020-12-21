@@ -83,7 +83,7 @@ function main(r)
     side = Ost
     while(cnt > 0)
         cnt = cnt - 1
-        global a = count
+        global a = count + 1
         while(a > 0)
             if(isborder(r, side))
                 b = go_around(r, side)

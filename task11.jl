@@ -150,7 +150,7 @@ function main(r)
             move!(r, Ost)
             x_dim = x_dim - 1
         end
-        putmarker!(r)
+        # putmarker!(r)
     end
     putmarker!(r)
     gotobegin(r)
@@ -170,7 +170,7 @@ function main(r)
             move!(r, Nord)
             y_dim = y_dim - 1
         end
-        putmarker!(r)
+        # putmarker!(r)
     end
     putmarker!(r)
     gotobegin(r)

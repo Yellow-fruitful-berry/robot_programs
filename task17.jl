@@ -129,8 +129,6 @@ function main(r)
     y_c = 0
     y_dim = y_dim + 1
     while(y_dim>0)
-        print(y_dim)
-        print("\n")
         y_c = y_c + 1
         y_dim = y_dim - 1
         c = x_dim-delay

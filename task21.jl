@@ -119,7 +119,7 @@ function main(r)
             if(isborder(r, side))
                 count,b = go_around(r, side)
                 c = c - count - 1
-                if(b == 1)
+                if((b == 1) & (count*b == 0))
                     obstacle_count = obstacle_count + 1
                 end
                 # print(count, " ", b, "\n")
@@ -134,7 +134,7 @@ function main(r)
         end
     end
     obstacle_count = obstacle_count + main1(r)
-    print(obstacle_count)
+    # print(obstacle_count)
     return obstacle_count
 end
 function main1(r)
@@ -155,7 +155,7 @@ function main1(r)
                 # print("Перегородка\n")
                 count,b = go_around(r, side)
                 c = c - count - 1
-                if(b == 1)
+                if((b == 1) & (count*b == 0))
                     obstacle_count = obstacle_count + 1
                 end
                 # print(b, " ", count, "\n")
